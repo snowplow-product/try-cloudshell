@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+import json
+import yaml
+import os
+import sys
+
+"""
+A wrapper around the lib/deploy-try-snowplow.sh bash script
+
+- Parses the config file
+- Sets configuration as environment variables
+- Invokes the bash script.
+
+We do it this way because python is better than bash at parsing yaml but we
+cannot use the python sdk for deploying with deployment manager.
+"""
+
+# TODO handle missing project id.
+project_id = sys.argv[1]
+
+with open("inputs.yaml", "r") as fh:
+    # TODO: handle parsing exceptions
+    config = yaml.safe_load(fh)
+
+for k, v in config.items():
+    os.environ[k.upper()] = str(v)
+os.environ["PROJECT_ID"] = project_id
+
+cmd = "./lib/deploy-try-snowplow.sh"
+os.execl(cmd, cmd)

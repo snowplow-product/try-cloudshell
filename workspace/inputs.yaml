@@ -1,0 +1,15 @@
+
+# This is your personal license key provided.
+# Check your Try Snowplow account and copy and paste it here.
+license_key: 00000000-0000-0000-0000-000000000000
+
+# Create a username that you'll use to access your database
+# Must begin with a letter and contain only alphanumeric characters. Cannot be 'admin'.
+database_user: changeme
+
+# Create a strong password that you'll use to access your database
+# Only printable ASCII characters besides '/', '@', '"', ' ' may be used.
+database_password: changeme
+
+# Your TrySnowplow deployment will be tagged with this name
+deployment_name: try-snowplow
