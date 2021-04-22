@@ -13,3 +13,6 @@ database_password: changeme
 
 # Your TrySnowplow deployment will be tagged with this name
 deployment_name: try-snowplow
+
+# Try Snowplow will be deployed in selected region
+cluster_region: europe-north1

@@ -34,3 +34,6 @@ You have deployed your pipeline.  Head over to [Try Snowplow](https://try.snowpl
 ## Tear down your pipeline
 
 To destroy your pipeline, head to [the deployent manager console](https://console.cloud.google.com/dm/deployments) and make sure you are listing deployments for project "{{ project-id }}".  Select your snowplow deployment and click "Delete".
+
+
+https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fsnowplow-product%2Ftry-cloudshell&cloudshell_tutorial=walkthrough.md&cloudshell_workspace=workspace&cloudshell_print=banner.txt

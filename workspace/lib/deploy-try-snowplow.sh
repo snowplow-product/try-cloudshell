@@ -9,6 +9,20 @@ echo -e "\n${PURPLE}Deploying your Try Snowplow pipeline...${NO_COLOR}\n"
 
 gcloud config set project "${PROJECT_ID}"
 
+gcloud container clusters create-auto auto-cluster-test-luke --region ${CLUSTER_REGION}
+
+helm repo add traefik https://helm.traefik.io/traefik
+
+helm repo update
+
+helm install traefik traefik/traefik
+
+kubectl apply -f lib/nginx-hello.yaml
+
+kubectl apply -f lib/ingress-routing.yaml
+
+kubectl apply -f lib/traefik-dashboard.yaml
+
 gcloud services enable deploymentmanager.googleapis.com sqladmin.googleapis.com
 
 gcloud deployment-manager deployments create "${DEPLOYMENT_NAME}" \
